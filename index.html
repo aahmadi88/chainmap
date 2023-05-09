@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <link rel="shortcut icon" type="image/x-icon" href="resources/data/icons8.png">  
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="resources/Leaflet.PolylineMeasure.css">
+    
+</head>
+<body>
+    <div id="map"></div>
+    <div class="container">
+            <div>
+                <h1> نمودار سهمی فروشگاه ها(سال 98)</h1>
+
+                <canvas id="canvas2"> </canvas>
+            </div>
+            <div></div>
+            <div>
+                <h1> رتبه نسبی موقعیت فروشگاه ها(سال 98)</h1>
+                <canvas id="canvas"> </canvas>
+            </div>
+            <div>
+                <h1> (سال 98)تعداد فروشگاه ها</h1>
+                <canvas id="canvas3"> </canvas>
+            </div>
+            <div>
+                <h2></h2>
+                <table id="id01" style="width:50%">
+                    <tr>
+                        <th>نام</th>
+                        <th>رتبه نسبی</th>
+                        <th>تعداد</th>
+                    </tr>
+                    <tr w3-repeat="customers">
+                        <td>{{chain}}</td>
+                        <td>{{rank}}</td>
+                        <td>{{num}}</td>
+                    </tr>
+                </table>             
+            </div>
+    </div>      
+    <!--https://aahmadi88.github.io/Retail/-->
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+     <!-- jquery-->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+    <!-- leaflet providers -->
+    <script src="resources/leaflet-providers.js"></script>
+    <script src="resources/Leaflet.PolylineMeasure.js"></script>
+
+    <!-- data -->
+    <script src="data/soft12.js"></script>
+    <script src="data/Chain3.js"></script>
+    <script src="data/grocery.js"></script>
+    <script src="data/BLK2.js"></script>
+    <script src="data/B400.js"></script>
+    <script src="data/C_B500.js"></script>
+    <script src="data/DM2_B500.js"></script>
+    <script src="data/ProChain.js"></script>
+    <script src="data/PieChart.js"></script>
+    <script src="data/Chain5.js"></script>
+    <script src="data/stat.js"></script>
+    <script src="data/THR2.js"></script>
+    <script src="data/Roud_Prim2.js"></script>
+    <script src="data/Roud_Secn.js"></script>
+    <script src="data/Roud_Tr.js"></script>
+
+
+
+
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+        w3.displayObject("id01", myObject);
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js">
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
