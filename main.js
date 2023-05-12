@@ -10,7 +10,7 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4> (Tehran:East/Region:4/Year:2000) FMCG نسبت توان خردید</h4>' +  (props ?
+    this._div.innerHTML = '<h4> (Tehran:East/Region:4/Year:2000) FMCG </h4>' +  (props ?
         '<b>' + props.ProbBuyPow + '</b><br />' + props.ProbBuyPow + '  / mi<sup>2</sup>'
         : 'نشانه گر موس را بر روی نقشه منطقه نمونه حرکت دهید بر روی فروشگاه ها کلید کنید (ابتدا لایه را از ایکون بالا انتخاب کنید)');
 };
@@ -195,7 +195,7 @@ var grocery = L.geoJSON(grocery,{
 
 
 var overlayerMap ={
-    "قدرت خرید":geojson,
+    " نسبت قدرت خرید":geojson,
  "فروشگاه های زنجیره ای":chainMap,
    "فروشگاه محلی":grocery,
    "Sale_Segment":blkjson,
@@ -205,7 +205,7 @@ var overlayerMap ={
   " معابر اصلی":prim_roud,
   " (معابر (دو":sec_roud,
   " (معابر (سه":tr_roud,
-  "احتمال ایجاد فروشگاه جدید (دقت 82 درصد)":ProChain,
+  "احتمال ایجاد فروشگاه جدید (دقت 80 درصد)":ProChain,
 
 };
 
