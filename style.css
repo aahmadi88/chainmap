@@ -13,6 +13,7 @@
 }
 
 h1{
+  font-family: Vazirmatn, sans-serif;
   font-size: 20px;
   text-align: justify;
 
@@ -27,7 +28,7 @@ h1{
 
 #canvas2{
   font-family: Arial;
-  width:  50vh;
+  width:  40vh;
   height: 18vh;
   text-align:right;
   font-size: medium;
@@ -43,10 +44,9 @@ h1{
 
 
 #map { 
-    height: 94vh;
-    width: 99vw;
+  height: 85.7vh;
+  width: 100vw;
  }
-
 
 .leaflet-popup-content-wrapper {
     padding:0;
@@ -93,7 +93,7 @@ h1{
 
 .legend {
     line-height: 18px;
-    color: #555;
+    color: #555555;
 }
 .legend i {
     width: 18px;
@@ -108,7 +108,6 @@ h1{
 
 body {
   height: 100%;
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   margin: 0;
   background: #fff;
@@ -116,8 +115,11 @@ body {
   justify-content:space-around;
   align-items:center;
   min-height:100px;
+
   }
- 
+
+
+
   
   .popup-fixed {
   position: fixed;
@@ -162,7 +164,7 @@ body {
   }
 
   table, th, td {
-    border:1px solid rgb(105, 20, 209);
+    border:1px solid rgb(134, 157, 232);
     width: fit-content;
     height: fit-content;
 
@@ -171,11 +173,23 @@ body {
 
   .header {
     overflow:hidden;
-    background-color: #0fa3ab;
+    background-color: rgb(17, 146, 171);
     padding: 10px 12px;
 
   }
-  
+
+  .fixed-header{
+    width: 100%;
+    position: fixed;        
+    background: #333;
+    padding: 10px 0;
+    color: #fff;
+}
+
+.fixed-header{
+  top: 0;
+}
+ 
   .header a {
     float: left;
     color: black;
@@ -188,9 +202,9 @@ body {
   }
   
   .header a.logo {
-    font-size: 25px;
+    font-size: 20px;
     font-weight:bold;
-
+    font-family: Vazirmatn, sans-serif;
   }
   
   .header a:hover {
@@ -220,17 +234,17 @@ body {
   }
 
   .btn {
-    color: rgb(41, 187, 236);
+    color: rgb(17, 18, 19);
     height: 36px;
-    width: 110px;
+    width: 200px;
     padding: 2px;
-    border: 2px solid rgb(163, 163, 238);
+    border: 2px solid rgb(239, 247, 5);
+    font-family: Vazirmatn, sans-serif;
+
 }
 
 footer {
   text-align: center;
-  padding: 4px;
-  background-color: rgb(159, 157, 156);
+  background-color: rgb(17, 146, 171);
   color: white;
 }
-  
