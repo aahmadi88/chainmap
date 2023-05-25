@@ -10,9 +10,9 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4> (Tehran:East/Region:4/Year:2000) FMCG </h4>' +  (props ?
+    this._div.innerHTML = '<h4> (Tehran:East/Region:4/Year:2000) FMCG  </h4>' +  (props ?
         '<b>' + props.ProbBuyPow + '</b><br />' + props.ProbBuyPow + '  / mi<sup>2</sup>'
-        : 'نشانه گر موس را بر روی نقشه منطقه نمونه حرکت دهید بر روی فروشگاه ها کلید کنید (ابتدا لایه را از ایکون بالا انتخاب کنید)');
+        : '    ( ابتدا لایه ها  از ایکون مربعی شکل بالا انتخاب شود و بعد روی کلمه (زوم) در سربرگ کلیک کنید)');
 };
 
 
@@ -195,17 +195,17 @@ var grocery = L.geoJSON(grocery,{
 
 
 var overlayerMap ={
-    " نسبت قدرت خرید":geojson,
- "فروشگاه های زنجیره ای":chainMap,
-   "فروشگاه محلی":grocery,
+    "قدرت خرید":geojson,
    "Sale_Segment":blkjson,
+   "فروشگاه های زنجیره ای":chainMap,
+   "فروشگاه محلی":grocery,
    "بلوک های با دسترسی مشترک در شعاع 400 متری":B400,
   " شعاع 100 تا 500 متری متری جانبو":C_B500,
 " شعاع 100 تا 500 متری دیلی مارکت":DM_B500,
   " معابر اصلی":prim_roud,
   " (معابر (دو":sec_roud,
   " (معابر (سه":tr_roud,
-  "احتمال ایجاد فروشگاه جدید (دقت 81 درصد)":ProChain,
+  "احتمال ایجاد فروشگاه جدید (دقت 82-76 درصد)":ProChain,
 
 };
 
@@ -215,12 +215,27 @@ var baseMap = {
     تهران:THR2
 };
 
+$('.story').on('click', function(){
+    // parse lat and lng from the divs data attribute
+    var latlng = $(this).data().point.split(',');
+    var lat = latlng[0];
+    var lng = latlng[1];
+    var zoom = 15;
 
-var map = L.map('map', {
-    center: [ 35.74221,51.551849],
-    zoom: 15,
+    // add a marker
+    var marker = L.marker([lat, lng],{}).addTo(map);
+    // set the view
+    map.setView([lat, lng], zoom);
+})
+
+
+var map = L.map('map', 
+{
+    center: [ 35.702138, 51.388394],
+    zoom: 11.5,
     layers: [osmMap,THR2]
-});
+}
+);
 
 //  chart
 
@@ -243,112 +258,108 @@ var map = L.map('map', {
 
 //var values = chain3.features[0].properties.rank;
 
-var data = []; 
-var labels = [];
-for(let i = 0; i <23; i++) { 
-    data.push(.99/([chain3.features[i].properties.rank]));
-    labels.push([chain3.features[i].properties.Chain]);  
+// var data = []; 
+// var labels = [];
+// for(let i = 0; i <23; i++) { 
+//     data.push(.99/([chain3.features[i].properties.rank]));
+//     labels.push([chain3.features[i].properties.Chain]);  
 
-}; 
-const ctx = document.getElementById('canvas');
+// }; 
+// const ctx = document.getElementById('canvas');
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: labels ,
-      datasets: [{
-        label: 'رتیه نسبی موقعیت فروشگاه ها  ',
-        data: data,
-        backgroundColor:"#ff335e",
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+//   new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//       labels: labels ,
+//       datasets: [{
+//         label: 'رتیه نسبی موقعیت فروشگاه ها  ',
+//         data: data,
+//         backgroundColor:"#ff335e",
+//         borderWidth: 1
+//       }]
+//     },
+//     options: {
+//       scales: {
+//         y: {
+//           beginAtZero: true
+//         }
+//       }
+//     }
+//   });
 
 
 
-  var data2 = []; 
-  var labels2 = [];
-  for(let i = 0; i <7; i++) { 
-      data2.push([piechart[i].chain.num]);
-      labels2.push([piechart[i].chain.Name]);  
+//   var data2 = []; 
+//   var labels2 = [];
+//   for(let i = 0; i <7; i++) { 
+//       data2.push([piechart[i].chain.num]);
+//       labels2.push([piechart[i].chain.Name]);  
   
-  }; 
-  const ctx2 = document.getElementById('canvas2');
+//   }; 
+//   const ctx2 = document.getElementById('canvas2');
   
-    new Chart(ctx2, {
-      type: 'doughnut',
-      data: {
-        labels: labels2 ,
-        datasets: [{
-          label: 'رتیه نسبی موقعیت فروشگاه ها  ',
-          data: data2,
-          backgroundColor:[
-            "#FFFF00",
-            " #0041C2",
-            "#ff8397",
-            "#f38b4a",
-            "#6970d5",
-           "#00FF00",
-           "#56d798",
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
+//     new Chart(ctx2, {
+//       type: 'doughnut',
+//       data: {
+//         labels: labels2 ,
+//         datasets: [{
+//           label: 'رتیه نسبی موقعیت فروشگاه ها  ',
+//           data: data2,
+//           backgroundColor:[
+//             "#FFFF00",
+//             " #0041C2",
+//             "#ff8397",
+//             "#f38b4a",
+//             "#6970d5",
+//            "#00FF00",
+//            "#56d798",
+//           ],
+//           borderWidth: 1
+//         }]
+//       },
+//       options: {
+//         scales: {
+//           y: {
+//             beginAtZero: true
+//           }
+//         }
+//       }
+//     });
   
 
 
-    var data3 = []; 
-    var labels3 = [];
-    for(let i = 0; i <7; i++) { 
-        data3.push([piechart[i].chain.num]);
-        labels3.push([piechart[i].chain.Name]);  
+//     var data3 = []; 
+//     var labels3 = [];
+//     for(let i = 0; i <7; i++) { 
+//         data3.push([piechart[i].chain.num]);
+//         labels3.push([piechart[i].chain.Name]);  
     
-    }; 
-    const ctx3 = document.getElementById('canvas3');
+//     }; 
+//     const ctx3 = document.getElementById('canvas3');
     
-    new Chart(ctx3, {
-        type: 'line',
-        data: {
-          labels: labels3 ,
-          datasets: [{
-            label: 'تعداد فروشگاه ها ',
-            data: [7,5,2,2,4,2,1],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
-    
-    
+//     new Chart(ctx3, {
+//         type: 'line',
+//         data: {
+//           labels: labels3 ,
+//           datasets: [{
+//             label: 'تعداد فروشگاه ها ',
+//             data: [7,5,2,2,4,2,1],
+//             borderWidth: 1
+//           }]
+//         },
+//         options: {
+//           scales: {
+//             y: {
+//               beginAtZero: true
+//             }
+//           }
+//         }
+//       });
 
 
-
-
-
-
-
+  
 var layerMap =  L.control.layers(baseMap,overlayerMap).addTo(map);
 info.addTo(map);
 legend.addTo(map);
+
+
