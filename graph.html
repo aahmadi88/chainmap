@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جداول و نمودار ها</title>
+    <link rel="stylesheet" href="graph.css">  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+
+    <div class="header" id="header" >
+        <div>
+            <a href="#default" class="logo"> (نسخه عمومی)سامانه تحلیل مکانی بازار </a>
+            <div class="header-right">
+                <a href="help.html" class="btn" dir="rtl">راهنمای استفاده از اپلیکیشن</a>
+                <a href="index.html" class="btn" dir="rtl"> بازگشت به نقشه ها</a>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="section1">
+
+
+        <div>
+            <h1> نمودار سهمی فروشگاه ها(سال ۹۸)</h1>
+
+            <canvas id="canvas2"> </canvas>
+        </div>
+
+        <div>
+            <h1> رتبه نسبی موقعیت فروشگاه ها(سال ۹۸)</h1>
+            <canvas id="canvas"> </canvas>
+        </div>
+        <div>
+            <h1> (سال ۹۸)تعداد فروشگاه ها</h1>
+            <canvas id="canvas3"> </canvas>
+        </div>
+
+    </div>
+
+        <div >
+            <h1> (سال ۹۸)  تعداد فروشگاه ها و رتبه نسبی آنها در ناحیه</h1>
+
+            <table id="id01" style="width:30%" class="center">
+                <tr>
+                    <th>نام</th>
+                    <th>رتبه نسبی</th>
+                    <th>تعداد</th>
+                </tr>
+                <tr w3-repeat="customers">
+                    <td>{{chain}}</td>
+                    <td>{{rank}}</td>
+                    <td>{{num}}</td>
+                </tr>
+            </table>   
+        </div>
+
+<!-- 
+    <div>
+        <div>
+            <table id="id01" style="width:30%">
+                <tr>
+                    <th>نام</th>
+                    <th>رتبه نسبی</th>
+                    <th>تعداد</th>
+                </tr>
+                <tr w3-repeat="customers">
+                    <td>{{chain}}</td>
+                    <td>{{rank}}</td>
+                    <td>{{num}}</td>
+                </tr>
+            </table>   
+        </div>      
+    </div> -->
+
+    <div id="about">
+
+        <footer>
+            <p style="font-size:12px">  
+                این سامانه با مدل سازی داده های مکانی و ارتباط آن با بازار مصرف کنندگان کالای خرده فروشی و ارائه آن به شکل نقشه های تحلیلی و توصیفی، برای سیستم های تصمیم گیری و تحلیل گران داده وهمچنین صاحبان کسب و کار به منظور بررسی و نظارت بر موقعیت خود،سطح رقابت و مصرف کنندگان کالا و خدمات در مناطق مختلف ایجاد شده است 
+            </p>    
+        </footer>
+    </div>
+
+
+
+     
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+
+     <!-- jquery-->
+
+    <!-- leaflet providers -->
+
+    <!-- data -->
+    <script src="data/Chain3.js"></script>
+    <script src="data/ProChain.js"></script>
+    <script src="data/PieChart.js"></script>
+    <script src="data/stat.js"></script>
+  
+
+ 
+
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+        w3.displayObject("id01", myObject);
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js">
+    </script>
+    <script src="graph.js"></script>
+
+
+
+</body>
+</html>
