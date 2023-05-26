@@ -44,8 +44,8 @@ h1{
  */
 
 #map { 
-  height: 80h;
-  width: 90vw;
+  height: 85.7vh;
+  width: 100vw;
  }
 
 .leaflet-popup-content-wrapper {
