@@ -232,7 +232,7 @@ var baseMap = {
 var map = L.map('map', 
 {
     center: [ 35.702138, 51.388394],
-    zoom: 15,
+    zoom: 11.5,
     layers: [osmMap,THR2]
 }
 );
