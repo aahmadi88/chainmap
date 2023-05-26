@@ -7,10 +7,10 @@
   padding:0;
 }
 
-.container{
+/* .container{
     display:flex;
     width:fit-content;
-}
+} */
 
 h1{
   font-family: Vazirmatn, sans-serif;
@@ -18,7 +18,7 @@ h1{
   text-align: justify;
 
 }
-#canvas{
+/* #canvas{
   font-family: Arial;
   width:  75vh;
   height: 30vh;
@@ -41,10 +41,10 @@ h1{
   text-align:right;
   font-size: medium;
 }
-
+ */
 
 #map { 
-  height: 85.7vh;
+  height: 100vh;
   width: 100vw;
  }
 
@@ -221,7 +221,7 @@ body {
     float: right;
   }
   
-  @media screen and (max-width: 90px) {
+/*   @media screen and (max-width: 90px) {
     .header a {
       float: none;
       display: block;
@@ -231,7 +231,7 @@ body {
     .header-right {
       float: none;
     }
-  }
+  } */
 
   .btn {
     color: rgb(17, 18, 19);
