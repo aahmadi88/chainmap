@@ -12,7 +12,7 @@ info.onAdd = function (map) {
 info.update = function (props) {
     this._div.innerHTML = '<h4> (Tehran:East/Region:4/Year:2000) FMCG  </h4>' +  (props ?
         '<b>' + props.ProbBuyPow + '</b><br />' + props.ProbBuyPow + '  / mi<sup>2</sup>'
-        : '    ( ابتدا لایه ها  از ایکون مربعی شکل بالا انتخاب شود و بعد روی کلمه (زوم) در سربرگ کلیک کنید)');
+        : '    ( ابتدا لایه ها  از ایکون مربعی شکل بالا انتخاب شود و بعد برای زوم بیشتر دو مرتبه بر روی نقشه کلیک کنید )');
 };
 
 
