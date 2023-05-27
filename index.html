@@ -23,6 +23,22 @@
         <div>
             <a href="#default" class="logo"> (نسخه عمومی)سامانه تحلیل مکانی بازار  </a>
             <div class="header-right">
+                <script>
+                  
+                    $('.story').on('click', function(){
+                      
+                        // parse lat and lng from the divs data attribute
+                        var latlng = $(this).data().point.split(',');
+                        var lat = latlng[0];
+                        var lng = latlng[1];
+                        var zoom = 15;
+
+                        // add a marker
+                        var marker = L.marker([lat, lng],{}).addTo(map);
+                        // set the view
+                        map.setView([lat, lng], zoom);
+})
+                </script>
                 <a class="story" data-point="35.74221,51.551849"> ZOOM </a>
                 <a href="help.html" class="btn" dir="rtl">راهنمای استفاده از اپلیکیشن</a>
                 <a href="index.html" class="btn" dir="rtl"> بازگشت به نقشه ها</a>
