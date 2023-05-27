@@ -222,17 +222,8 @@ var map = L.map('map',
     center: [ 35.722138, 51.388394],
     zoom: 11.5,
     layers: [osmMap,THR2]
-}
-);
-
-
-
-  
-var layerMap =  L.control.layers(baseMap,overlayerMap).addTo(map);
-info.addTo(map);
-legend.addTo(map);
-
-$('.story').on('click', function(){
+},          
+ $('.story').on('click', function(){
     // parse lat and lng from the divs data attribute
     var latlng = $(this).data().point.split(',');
     var lat = latlng[0];
@@ -243,7 +234,16 @@ $('.story').on('click', function(){
     var marker = L.marker([lat, lng],{}).addTo(map);
     // set the view
     map.setView([lat, lng], zoom);
-})
+})             
+);
+
+
+
+  
+var layerMap =  L.control.layers(baseMap,overlayerMap).addTo(map);
+info.addTo(map);
+legend.addTo(map);
+
 
 
 
