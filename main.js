@@ -2,6 +2,17 @@ var osmMap = L.tileLayer.provider('OpenStreetMap.Mapnik');
 
 var info = L.control();
 
+var goecod =  L.Control.geocoder({
+    defaultMarkGeocode: false
+  })
+    .on('markgeocode', function(e) {
+      var latlng = e.geocode.center;
+      var marker = L.marker(latlng).addTo(map);
+      map.fitBounds(e.geocode.bbox);
+      map.setZoom(15);
+    })
+
+
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
     this.update();
@@ -246,6 +257,7 @@ var map = L.map('map',
 var layerMap =  L.control.layers(baseMap,overlayerMap).addTo(map);
 info.addTo(map);
 legend.addTo(map);
+goecod.addTo(map);
 
 
 
