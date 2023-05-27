@@ -6,25 +6,9 @@
           alert ("   پیشنهاد می شود ابتدا راهنمای استفاده از اپلیکیشن را مطالعه کنید و برای زوم بیشتر در منطقه بعد از انتخاب لایه دو مرتبه بر روی لایه های نقشه کلیک کنید ");
         }
     </script>
-     <script> 
-        
-        $('.story').on('click', function(){
-            // parse lat and lng from the divs data attribute
-            var latlng = $(this).data().point.split(',');
-            var lat = latlng[0];
-            var lng = latlng[1];
-            var zoom = 15;
-
-            // add a marker
-            var marker = L.marker([lat, lng],{}).addTo(map);
-            // set the view
-            map.setView([lat, lng], zoom);
-            
-            })
-
-      </script>
     
     
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
