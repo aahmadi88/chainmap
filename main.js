@@ -135,7 +135,7 @@ function makePopupcontent(pnt){
     return `
         <div>
             <h4> نام فروشگاه : ${pnt.properties.Chain} </h4>
-            <p> رتیه فروشگاه : ${pnt.properties.rank}</p>
+            <p> رتبه فروشگاه : ${pnt.properties.rank}</p>
         </div>
     `;
  }
