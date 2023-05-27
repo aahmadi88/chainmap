@@ -227,6 +227,23 @@ var baseMap = {
 //     // set the view
 //     map.setView([lat, lng], zoom);
 // })        
+$(document).ready( function() {
+    $('.story').on('click', function(){
+        // parse lat and lng from the divs data attribute
+        var latlng = $(this).data().point.split(',');
+        var lat = latlng[0];
+        var lng = latlng[1];
+        var zoom = 15;
+    
+        // add a marker
+        var marker = L.marker([lat, lng],{}).addTo(map);
+        // set the view
+        map.setView([lat, lng], zoom);
+    })
+})
+
+
+
 
 var map = L.map('map', 
 {
