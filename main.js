@@ -93,7 +93,7 @@ legend.onAdd = function (map) {
         grades = [0.0, 0.35, 0.45, 0.60, 0.70, 0.80, 0.99],
         labels = [];
 
-    // loop through our density intervals and generate a label with a colored square for each interval
+    // loop through our density  and generate a label with a colored square for each interval
     for (var i = 1; i < grades.length; i++) {
         div.innerHTML +=
             '<i style="background:' + getColor(grades[i] ) + '"></i> ' +
